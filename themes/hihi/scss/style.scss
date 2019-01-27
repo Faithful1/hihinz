@@ -1,0 +1,640 @@
+// BlueTwist and Hihi Society / The Great Hihi Sperm Race
+// hihispermrace.nz
+
+// Mixins
+@import 'functions';
+@import 'variables';
+@import 'breakpoints';
+@import 'hidden';
+
+// Colours
+$hihi-orange: #f37b0c;
+$hihi-orange-light: #ff912e;
+$hihi-orange-lighter: #ffd8b5;
+$hihi-yellow: #fef14e;
+$hihi-yellow-light: #fcf59f;
+$hihi-brown: #8b8030;
+$hihi-grey: #696969;
+$hihi-grey-light: #f8f8f8;
+$hihi-grey-med: #dddddd;
+
+body {
+	p, a, h1, h2, h3, h4, h5, li, span, button, em, strong {
+		font-family: 'Roboto', sans-serif;
+	}
+}
+
+.btn {
+	text-transform: uppercase;
+	border: none;
+
+	&.btn-primary {
+		background: $hihi-yellow;
+		color: black;
+		font-weight: 700;
+
+		&:hover {
+			background: $hihi-yellow-light;
+		}
+	}
+}
+
+// Header
+.header {
+	background: $hihi-orange;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	.container {
+		nav {
+			.navbar-brand {
+				width: 100px;
+				@include media-breakpoint-up(lg) {
+					width: 150px;
+				}
+			}
+			ul.navbar-nav	{
+				@include media-breakpoint-up(lg) {
+					// border-radius: 10px;
+					// background: $hihi-yellow;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+				}
+
+				li.nav-item {
+					border-bottom: 1px solid $hihi-orange-light;
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+					@include media-breakpoint-up(lg) {
+						border-bottom: none;
+						border-right: 2px solid $hihi-brown;
+
+						&:first-child {
+							a.nav-link {
+								border-top-left-radius: 10px;
+								border-bottom-left-radius: 10px;
+							}
+						}
+						&:last-child {
+							border-right: none;
+
+							a.nav-link {
+								border-top-right-radius: 10px;
+								border-bottom-right-radius: 10px;
+							}
+						}
+					}
+
+					a.nav-link {
+						text-transform: uppercase;
+						font-weight: bold;
+						padding: 15px;
+						color: $hihi-orange-lighter;
+
+						@include media-breakpoint-up(lg) {
+							background: $hihi-yellow;
+							color: $hihi-brown;
+							font-size: 14px;
+							padding: 15px 10px;
+							transition: background-color 0.2s;
+
+							&:hover {
+								background-color: $hihi-yellow-light;
+							}
+						}
+						@include media-breakpoint-up(xl) {
+							font-size: 14px;
+							padding: 20px 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Sections
+.section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	p {
+		color: $hihi-grey;
+
+		a {}
+	}
+	h1, h2, h3, h4 {
+		color: $hihi-orange;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	h1 {}
+	h2 {
+		text-align: center;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 2px dotted $hihi-orange;
+	}
+	h3 {
+	}
+	h4 {
+	}
+
+	.location {
+		margin-bottom: 30px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0px;
+			margin-top: 30px;
+		}
+
+		em {
+			font-size: 12px;
+			color: $hihi-grey;
+			text-align: right;
+		}
+		h4 {
+			margin-top: 8px;
+
+			a {
+				color: $hihi-orange;
+			}
+		}
+	}
+
+	.team-member {
+		text-align: center;
+
+		h5 {
+			color: $hihi-orange;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+
+		p {
+			font-size: 14px;
+		}
+	}
+
+	.sponsors {
+		ul {
+			padding: 0px;
+			margin: 0px;
+			list-style-type: none;
+
+			li {
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+				border-bottom: 1px solid $hihi-orange-lighter;
+
+				&:last-child {
+					border-bottom: 0px;
+				}
+
+				img {
+					margin-right: 16px;
+					display: inline-block;
+				}
+
+				.companies-text {
+					display: inline-block;
+					vertical-align: top;
+					margin-top: 8px;
+					width: 60%;
+
+					a {
+						color: $hihi-orange;
+					}
+				}
+			}
+		}
+	}
+
+	.list-wrapper {
+		background: url('../images/background.png') no-repeat;
+		background-size: contain;
+		padding: 25px;
+
+		@include media-breakpoint-up(md) {
+			padding: 80px;
+		}
+
+		ul {
+			background: white;
+			list-style-type: none;
+			margin: 0px;
+			padding: 30px;
+			border: 1px solid $hihi-grey-med;
+			border-radius: 10px;
+			box-shadow: 2px 2px 8px 0px $hihi-grey-med;
+			text-align: center;
+
+			li {
+				margin-bottom: 16px;
+				color: $hihi-grey;
+
+				&:last-child {
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+
+	.captionImage {
+		width: auto!important;
+
+		img {
+			margin-bottom: 10px;
+			// two below act like img-fluid
+			max-width: 100%;
+			height: auto;
+		}
+		.caption {
+			font-size: 14px;
+			font-style: italic;
+		}
+		&.left {
+			float: left;
+			margin-right: 20px;
+		}
+		&.right {
+			float: right;
+			margin-left: 20px;
+		}
+	}
+
+	&.hero {
+		background: $hihi-orange;
+		text-align: center;
+
+		h3 {
+			color: white;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		p {
+			color: white;
+		}
+
+		&.home {
+			padding-top: 0px;
+
+			img {
+				&.home-hihi {
+					padding: 40px;
+				}
+			}
+		}
+		.card-container {
+			background: url('../images/background.png') no-repeat;
+			background-size: contain;
+			padding: 25px;
+
+			@include media-breakpoint-up(md) {
+				padding: 80px;
+			}
+
+			.hero-card {
+				background: white;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				position: relative;
+
+				p {
+					color: $hihi-grey;
+				}
+
+				@include media-breakpoint-up(md) {
+					padding: 20px 60px;
+				}
+
+				&::after {
+					position: absolute;
+					top: -60px;
+					right: 30px;
+					content: '';
+					background: url('../images/hihi-icon.png') no-repeat;
+					background-size: cover;
+					height: 80px;
+					width: 80px;
+				}
+			}
+		}
+	}
+
+	&.conservation {
+
+	}
+
+	&.win {
+
+	}
+
+	&.buy {
+		background: $hihi-grey-light;
+
+		a {
+			&.bird-tabs {
+				cursor: pointer;
+				display: block;
+				width: 100%;
+				margin-bottom: 10px;
+
+				@include media-breakpoint-up(md) {
+					width: auto;
+					display: inline-block;
+					margin-right: 20px;
+					margin-bottom: 0px;
+				}
+			}
+			&.btn-primary {
+				border: 1px solid $hihi-orange;
+				background: white;
+				font-size: 18px;
+
+				&:hover {
+					background: $hihi-orange-light;
+				}
+			}
+		}
+
+		h4 {
+			margin-bottom: 20px;
+			text-align: left;
+		}
+
+		.bird {
+			padding: 8px;
+			margin-bottom: 10px;
+
+			@include media-breakpoint-up(md) {
+				margin-bottom: 20px;
+			}
+
+			.a-birds {
+				border: 1px solid $hihi-orange;
+				border-radius: 10px;
+				padding: 10px;
+				background: white;
+				text-align: center;
+				height: 100%;
+				position: relative;
+
+				img {
+					padding: 0 80px;
+
+					@include media-breakpoint-up(md) {
+						padding: 0 40px;
+					}
+				}
+
+				.birds-p {
+					font-size: 14px;
+				}
+
+				span.action-pad {
+					display: block;
+					height: 60px;
+				}
+
+				.actions {
+					position: absolute;
+					bottom: 20px;
+					left: 0;
+					right: 0;
+					width: 100%;
+
+					.btn {
+						border: 1px solid $hihi-orange;
+						background: white;
+
+						&:hover {
+							background: $hihi-orange-light;
+						}
+					}
+
+					.count {
+						div {
+							display: inline-block;
+							padding: 10px;
+							border: 1px solid $hihi-orange-light;
+							cursor: pointer;
+
+							&:hover {
+								background: $hihi-orange-lighter;
+							}
+						}
+						span {
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		.RaceFooter {
+			// border-top: 1px solid $hihi-orange-lighter;
+			// border-bottom: 1px solid $hihi-orange-lighter;
+			// padding-top: 20px;
+			// padding-bottom: 20px;
+			// margin-top: 20px;
+			// margin-bottom: 20px;
+			position: fixed;
+			display: block;
+			width: 100%;
+			bottom: 0px;
+			background: white;
+			z-index: 1000;
+			right: 0px;
+			padding: 20px;
+			text-align: center;
+			border-top: 1px solid $hihi-orange;
+
+			label {
+				margin-bottom: 0px;
+				margin-right: 20px;
+			}
+
+			button {
+				display: inline-block;
+
+				&.btn {
+					border: 1px solid $hihi-orange;
+					background: $hihi-orange;
+					color: white;
+					padding: 10px;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.picks {
+			h2 {
+				text-align: left;
+				border-bottom: none;
+			}
+
+			.w-form {
+				border-top: 1px solid $hihi-orange-lighter;
+				margin-top: 20px;
+				padding-top: 20px;
+
+				#PaymentForm {
+					background: white;
+					padding: 20px;
+					border: 1px solid $hihi-orange-light;
+					border-radius: 10px;
+
+					fieldset {
+
+						.form-control {
+						}
+						.text, .dropdown, .checkbox, h5, .StripeElement {
+							margin-bottom: 16px;
+						}
+						.checkbox {
+							padding: 8px;
+							background: $hihi-grey-light;
+
+							label {
+								width: 90%;
+							}
+						}
+						.form-check-input {
+							margin-left: 0px;
+							display: inline-block;
+							vertical-align: top;
+							margin-top: 6px;
+							position: inherit;
+						}
+
+
+						.StripeElement {
+							background: $hihi-grey-light;
+							padding: 10px;
+
+						}
+					}
+					.Actions {
+						.btn-primary {
+							border: 1px solid $hihi-orange;
+							background: $hihi-orange;
+							color: white;
+							margin-top: 8px;
+							padding: 10px;
+							font-size: 18px;
+							margin-bottom: 8px;
+
+							&:hover {
+								background: $hihi-orange-light;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.bets {
+		background: $hihi-grey-light;
+	}
+
+	&.money {
+		background: $hihi-orange;
+
+		.money-counter {
+			p {
+				color: white;
+				font-size: 18px;
+				font-weight: 500;
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+// Footer
+.footer {
+	background: $hihi-orange;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	h1, h2, h3, h4, p {
+		color: white;
+	}
+	h1 {
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	.btn {
+		margin-bottom: 20px;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.top {
+		text-align: center;
+	}
+
+	.middle {
+		a {
+			color: $hihi-yellow-light;
+			&:hover {
+				color: $hihi-yellow;
+			}
+		}
+
+		.left {
+			text-align: center;
+
+			@include media-breakpoint-up(md) {
+				text-align: left;
+			}
+
+		}
+		.center {
+			text-align: center;
+
+			img.logo {
+				max-width: 200px;
+				display: block;
+				margin: 30px auto;
+			}
+
+			img.social {
+				width: 32px;
+				padding: 10px;
+			}
+		}
+		.right {
+			margin-top: 20px;
+			text-align: center;
+
+			@include media-breakpoint-up(md) {
+				text-align: right;
+				margin-top: 0px;
+			}
+		}
+	}
+
+	.copyright {
+		margin-top: 30px;
+		font-size: 14px;
+		text-align: center;
+
+		p {
+			margin-bottom: 0px;
+		}
+	}
+}

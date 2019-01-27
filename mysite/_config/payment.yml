@@ -1,0 +1,34 @@
+---
+Name: payment
+---
+Payment:
+  allowed_gateways:
+    - 'Stripe'
+  extensions:
+    - CustomPayment
+
+GatewayInfo:
+  Stripe:
+    parameters:
+      apiKey: 'sk_test_2ORTFyNHAVYHLwfHIZmhIf4j'
+
+---
+Except:
+  environment: 'live'
+---
+Payment:
+  file_logging: 1
+
+GatewayInfo:
+  Stripe:
+    parameters:
+      testMode: true
+
+# ---
+# Only:
+#   environment: 'live'
+# ---
+# GatewayInfo:
+#   Stripe:
+#     parameters:
+#       apiKey: ''
